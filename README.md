@@ -1,11 +1,5 @@
 # CCTV-Crowd-Flow-Analyzer
 
-Okay, here is the complete README file for your CCTV human detection and line crossing project, incorporating all the details we discussed, including the manual line setup and the use of a pre-trained model.
-
------
-
-# Restaurant Occupancy Monitor & People Counter (DineTrack AI) 🍽️🚶‍♂️
-
 ## Project Overview
 
 This project implements an intelligent computer vision system designed to monitor and count human traffic within a restaurant environment using CCTV footage. It leverages a state-of-the-art object detection model (YOLOv8) to identify individuals and tracks their movement across a predefined virtual line, providing real-time "in" and "out" counts.
