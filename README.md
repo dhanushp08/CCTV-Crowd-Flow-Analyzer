@@ -21,9 +21,9 @@ This system can be invaluable for understanding customer flow, managing capacity
   * **Region of Interest (ROI) Masking:** Employs an image mask to focus detection only on relevant areas of the CCTV footage, improving accuracy and efficiency.
   * **Video Output:** Generates an annotated output video visualizing detections, the virtual line, and real-time counts.
 
-## Technologies Used
+## Built With
 
-  * **Python 3.x**
+  * **Python**
   * **OpenCV (`cv2`)**: For video processing, drawing, and image manipulation.
   * **`ultralytics` (YOLOv8)**: For efficient and accurate object detection.
   * **`cvzone`**: A helper library for simplified computer vision drawing tasks.
@@ -58,14 +58,7 @@ By using a pre-trained model, the system benefits from robust and generalized hu
 
 ## Performance
 
-The system provides real-time human detection and counting. Performance can vary based on:
-
-  * The complexity of the video scene.
-  * The resolution of the input video.
-  * The hardware running the code (CPU vs. GPU).
-  * The chosen YOLOv8 model size (YOLOv8n is lightweight).
-
-The current setup effectively tracks and counts individuals, providing an accurate representation of people flow within the defined ROI.
+The system provides real-time human detection and counting. System is quite accurate given there is a limited number of people either entering or exiting the location. But the code does not work well when it is SUPER-CROWDED. It performs better than a human if you exactly want to know the performance of the code. Goal is to improve it so it can work well in congested locations as well. 
 
 ## How to Run 🚀
 
@@ -73,15 +66,15 @@ This project is designed to be run in a **Jupyter Notebook** environment, such a
 
 1.  **Get the Code:**
 
-      * Clone this repository: `git clone https://github.com/YOUR_GITHUB_USERNAME/YOUR_REPO_NAME.git`
-      * Navigate into the project directory: `cd YOUR_REPO_NAME`
+      * Clone this repository: `git clone https://github.com/dhanushp08/CCTV-Crowd-Flow-Analyzer.git`
+      * Navigate into the project directory: `cd CCTV-Crowd-Flow-Analyzer`
 
 2.  **Google Drive Setup:**
 
-      * The notebook expects your input video (e.g., `D01_20240927125959.mp4`) and your mask image (`newmask.png`) to be in a specific Google Drive folder (e.g., `/content/drive/MyDrive/final/`).
-      * **You must mount your Google Drive** at the beginning of your Colab session using `from google.colab import drive; drive.mount('/content/drive')`.
-      * **Ensure your video and mask files are placed in the correct paths within your Google Drive** as specified in the Python code (`cap = cv2.VideoCapture(...)`, `mask = cv2.imread(...)`).
-      * The output video will be saved to `/content/drive/MyDrive/final/count.mp4` (or whatever `output_path` is set to in your code).
+      * The notebook expects your input video and your mask image to be in a specific Google Drive folder.
+      * **You must mount your Google Drive** at the beginning of your Colab session.
+      * **Ensure your video and mask files are placed in the correct paths within your Google Drive**.
+      * The output video will be saved to whatever `output_path` is set to in your code.
 
 3.  **Run the Notebook:**
 
@@ -94,19 +87,11 @@ This project is designed to be run in a **Jupyter Notebook** environment, such a
 
 ## Demo
 
-Watch a short demonstration video of the system in action:
+Input video and output video both are uploaded within the same repository.
 
-[](https://www.google.com/search?q=YOUR_YOUTUBE_OR_DRIVE_VIDEO_LINK_HERE)
 
-*(Click the image above to view the demo)*
+## How the project can be enhanced in near future
 
-## Future Enhancements
-
-  * **Robust Tracking:** Integrate more advanced object tracking algorithms (e.g., SORT, DeepSORT) for improved ID persistence and accuracy in complex crowd scenarios.
   * **Live Stream Integration:** Adapt the code to directly process live RTSP streams from IP cameras.
-  * **Data Logging:** Store "IN" and "OUT" counts to a database (e.g., SQLite, CSV) with timestamps for historical analysis.
-  * **Dashboard/UI:** Create a simple web-based dashboard (e.g., using Flask) to display real-time counts and potentially the live processed feed.
-  * **Alerting:** Implement alerts (e.g., email, notification) if capacity thresholds are exceeded.
-  * **Parameter Configuration:** Externalize line coordinates, thresholds, and video paths into a configuration file for easier setup without modifying code.
-
+  * **Dashboard/UI:** Create a simple web-based dashboard to display real-time counts and potentially the live processed feed.
 -----
