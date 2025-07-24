@@ -54,7 +54,7 @@ By using a pre-trained model, the system benefits from robust and generalized hu
 
 The system provides real-time human detection and counting. System is quite accurate given there is a limited number of people either entering or exiting the location. But the code does not work well when it is SUPER-CROWDED. It performs better than a human if you exactly want to know the performance of the code. Goal is to improve it so it can work well in congested locations as well. 
 
-## How to Run 🚀
+## How to Run 
 
 This project is designed to be run in a **Jupyter Notebook** environment, such as **Google Colab**, as it handles file paths related to Google Drive.
 
